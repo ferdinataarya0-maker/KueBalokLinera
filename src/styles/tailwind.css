@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FDF6EC;
+  --foreground: #3B1F0A;
+  --primary: #B5651D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4A261;
+  --secondary-foreground: #3B1F0A;
+  --accent: #E76F51;
+  --accent-foreground: #FFFFFF;
+  --muted: #F5E6D3;
+  --muted-foreground: #8B5E3C;
+  --card: #FFFFFF;
+  --card-foreground: #3B1F0A;
+  --border: #E8D5BE;
+  --input: #EFE0CC;
+  --ring: #B5651D;
+  --radius: 0.75rem;
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+
+  --brown-50: #FDF6EC;
+  --brown-100: #F5E6D3;
+  --brown-200: #E8D5BE;
+  --brown-300: #D4B896;
+  --brown-400: #C49A6C;
+  --brown-500: #B5651D;
+  --brown-600: #9B5418;
+  --brown-700: #7D4010;
+  --brown-800: #5C2E08;
+  --brown-900: #3B1F0A;
+
+  --peach-100: #FDE8D8;
+  --peach-200: #FAD0B0;
+  --peach-300: #F4A261;
+  --peach-400: #E76F51;
+
+  --success: #2D6A4F;
+  --success-bg: #D8F3DC;
+  --warning: #B7791F;
+  --warning-bg: #FEFCBF;
+  --error: #C53030;
+  --error-bg: #FED7D7;
+  --info: #2B6CB0;
+  --info-bg: #BEE3F8;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown-300) var(--brown-100);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: var(--brown-100);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--brown-300);
+    border-radius: 3px;
+  }
+
+  .card-warm {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px rgba(181, 101, 29, 0.08), 0 1px 2px rgba(181, 101, 29, 0.06);
+  }
+
+  .card-warm-hover {
+    transition: box-shadow 200ms ease, transform 150ms ease;
+  }
+
+  .card-warm-hover:hover {
+    box-shadow: 0 4px 12px rgba(181, 101, 29, 0.14), 0 2px 6px rgba(181, 101, 29, 0.10);
+    transform: translateY(-1px);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #FDF6EC 0%, #F5E6D3 50%, #FAD0B0 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #B5651D 0%, #9B5418 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+  }
+
+  .badge-rank-1 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #5C2E08;
+    font-weight: 700;
+  }
+
+  .badge-rank-2 {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .badge-rank-3 {
+    background: linear-gradient(135deg, #CD7F32, #B8621B);
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .sidebar-item-active {
+    background-color: var(--muted);
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    font-weight: 600;
+  }
+
+  .sidebar-item-hover {
+    transition: all 150ms ease;
+  }
+
+  .sidebar-item-hover:hover {
+    background-color: var(--muted);
+    color: var(--primary);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #B5651D 0%, #9B5418 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 150ms ease;
+    box-shadow: 0 2px 4px rgba(181, 101, 29, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 4px 8px rgba(181, 101, 29, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 2px rgba(181, 101, 29, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: var(--muted);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    transition: all 150ms ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--brown-200);
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.97);
+  }
+
+  .table-row-hover {
+    transition: background-color 120ms ease;
+  }
+
+  .table-row-hover:hover {
+    background-color: var(--muted);
+  }
+
+  .input-warm {
+    background-color: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--foreground);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+    outline: none;
+  }
+
+  .input-warm:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(181, 101, 29, 0.15);
+  }
+
+  .input-warm::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 300ms ease forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 300ms ease forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 200ms ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .pulse-highlight {
+    animation: pulseHighlight 600ms ease;
+  }
+
+  @keyframes pulseHighlight {
+    0% { background-color: transparent; }
+    40% { background-color: var(--peach-100); }
+    100% { background-color: transparent; }
+  }
+}
+
+/* ── Print (Laporan) ─────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  .panel-root, .panel-col, .panel-main { display: block !important; height: auto !important; overflow: visible !important; }
+  body { background: #fff !important; }
+}
+
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+html, body { max-width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+@media (max-width: 640px) {
+  /* 16px mencegah iOS/Android otomatis zoom saat mengetik */
+  input, select, textarea, .input-warm { font-size: 16px !important; }
+  button { min-height: 36px; }
+}
