@@ -2,7 +2,7 @@ import { imageHosts } from './image-hosts.config.mjs';
 
 // Build untuk GitHub Pages: GITHUB_PAGES=true npm run build  (hasil statis di folder "out")
 const isPages = process.env.GITHUB_PAGES === 'true';
-const basePath = isPages ? '/KueSPKupdate' : '';
+const basePath = isPages ? '/KueBalokLinera' : '';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
